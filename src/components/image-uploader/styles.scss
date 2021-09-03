@@ -1,0 +1,29 @@
+.image-uploader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  flex: 1;
+  padding: 1rem;
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
+  &__container {
+    padding: 1rem 3rem;
+    border: 1px dashed #aaa;
+    background-color: white;
+    @media (max-width: 768px) {
+        padding: 1rem;
+    }
+  }
+  &__text {
+    font-weight: bold;
+    cursor: pointer;
+    color: #0075ff;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: .5rem;
+    }
+  }
+}

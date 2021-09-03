@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.scss";
+import ImagePreview from "./components/image-preview";
+import ImageUploader from "./components/image-uploader";
 
 function App() {
+  const [uploadedImage, setUploadedImage] = useState(null);
+  const getUploadedImage = (image) => {
+    setUploadedImage(image);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ImageUploader getUploadedFiles={getUploadedImage} />
+      {uploadedImage && <ImagePreview uploadedImage={uploadedImage} />}
     </div>
   );
 }
